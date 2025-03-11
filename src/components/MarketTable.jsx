@@ -1,6 +1,10 @@
 import React from "react";
 
 const MarketTable = ({ marketData }) => {
+  const filteredData = marketData.filter(
+    (item) => item.sell_price_min !== 0 && item.sell_price_max !== 0
+  );
+
   return (
     <table border="1">
       <thead>
@@ -14,8 +18,8 @@ const MarketTable = ({ marketData }) => {
         </tr>
       </thead>
       <tbody>
-        {marketData.length > 0 ? (
-          marketData.map((item, index) => (
+        {filteredData.length > 0 ? (
+          filteredData.map((item, index) => (
             <tr key={index}>
               <td>{item.item_id}</td>
               <td>{item.city}</td>
@@ -27,7 +31,7 @@ const MarketTable = ({ marketData }) => {
           ))
         ) : (
           <tr>
-            <td colSpan="7">Нет данных</td>
+            <td colSpan="6">Нет данных</td>
           </tr>
         )}
       </tbody>
