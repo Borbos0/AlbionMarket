@@ -11,3 +11,9 @@ add node module
 and start
 
 ### `npm run start`
+
+
+
+
+Swagger: https://old.west.albion-online-data.com/api/swagger/index.html
+API: https://www.albion-online-data.com/api-site/api.html
